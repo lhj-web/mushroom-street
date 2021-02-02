@@ -1,6 +1,8 @@
 <template>
   <div class="tab-bar-item" @click="itemClick()">
-      <slot></slot>
+      <div v-if="!isActive"><slot name="icon"></slot></div>
+      <div v-else><slot name="icon-active"></slot></div>
+      <div :class="{active: isActive}"><slot></slot></div>
   </div>
 </template>
 <script>
@@ -18,14 +20,15 @@ export default {
       this.$router.replace(this.path).catch((error) => error);
     },
   },
-  // computed: {
-  //   isActive() {
-  //     return this.$route.path.indexOf(this.path) !== -1;
-  //   },
-  // },
+  computed: {
+    isActive() {
+      return this.$route.path.indexOf(this.path) !== -1;
+    },
+  },
 };
 </script>
 <style scoped>
+
 .tab-bar-item {
   margin-top: 5px;
   text-align: center;
@@ -38,7 +41,7 @@ export default {
   margin-bottom: 2px;
 }
 
-/* .tab-bar-item .active {
+.tab-bar-item .active {
   color: red;
-} */
+}
 </style>

@@ -3,11 +3,14 @@
     <div
       v-for="(m, index) in message"
       :key="index"
-      :id="num==index? 'active': ''"
-      @click="changeColor(index)"
     >
       <tab-bar-item :path="paths[index]">
-        <img :src="m.address" />
+        <template v-slot:icon>
+          <img :src="m.address" />
+        </template>
+        <template v-slot:icon-active>
+          <img :src="m.active" />
+        </template>
         <div>{{ m.name }}</div>
       </tab-bar-item>
     </div>
@@ -21,6 +24,10 @@ import ImgHome from 'assets/img/tabbar/home.png';
 import ImgCate from 'assets/img/tabbar/category.png';
 import ImgShop from 'assets/img/tabbar/shopping-cart-one.png';
 import ImgMe from 'assets/img/tabbar/me.png';
+import ImgHomeActive from 'assets/img/tabbar/home-two.png';
+import ImgCateActive from 'assets/img/tabbar/category-two.png';
+import ImgShopActive from 'assets/img/tabbar/shopping-cart-two.png';
+import ImgMeActive from 'assets/img/tabbar/me-two.png';
 
 export default {
   name: 'MainTabbar',
@@ -31,27 +38,16 @@ export default {
   data() {
     return {
       message: [
-        { name: '首页', address: ImgHome },
-        { name: '分类', address: ImgCate },
-        { name: '购物车', address: ImgShop },
-        { name: '我的', address: ImgMe },
+        { name: '首页', address: ImgHome, active: ImgHomeActive },
+        { name: '分类', address: ImgCate, active: ImgCateActive },
+        { name: '购物车', address: ImgShop, active: ImgShopActive },
+        { name: '我的', address: ImgMe, active: ImgMeActive },
       ],
-      num: 0,
       paths: ['/home', '/category', '/cart', '/profile'],
     };
-  },
-  methods: {
-    changeColor(index) {
-      this.num = index;
-    },
   },
 };
 </script>
 
 <style scoped>
-@import '~assets/css/base.css';
-
-#active {
-  color: red;
-}
 </style>

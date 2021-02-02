@@ -1,6 +1,9 @@
 <template>
   <div id="app">
-    <main-tabbar />
+    <keep-alive exclude="Detail">
+      <router-view />
+    </keep-alive>
+    <main-tabbar class="main-tabbar" />
   </div>
 </template>
 
@@ -17,4 +20,7 @@ export default {
 </script>
 
 <style scoped>
+.main-tabbar {
+  z-index: 999;
+}
 </style>
