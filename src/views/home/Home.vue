@@ -59,6 +59,7 @@ export default {
       isPullUpLoad: true,
       tabControlTop: 0,
       isTabFixed: false,
+      saveY: 0,
     };
   },
   components: {

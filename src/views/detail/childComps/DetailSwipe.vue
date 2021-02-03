@@ -10,7 +10,8 @@
 export default {
   name: 'DetailSwipe',
   data() {
-    return {};
+    return {
+    };
   },
   props: {
     banners: {
@@ -25,7 +26,7 @@ export default {
 
 <style scoped>
 .van-swipe {
-  height: 40vh;
+  height: 50vh;
   width: 100%;
   overflow: hidden;
 }

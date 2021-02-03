@@ -3,7 +3,7 @@
     <keep-alive exclude="Detail">
       <router-view />
     </keep-alive>
-    <main-tabbar class="main-tabbar" />
+    <main-tabbar class="main-tabbar" v-if="$route.meta.TabbarShow"/>
   </div>
 </template>
 
@@ -21,6 +21,6 @@ export default {
 
 <style scoped>
 .main-tabbar {
-  z-index: 999;
+  z-index: 998;
 }
 </style>
