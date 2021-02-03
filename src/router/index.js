@@ -19,7 +19,7 @@ const routes = [
     name: 'Home',
     component: Home,
     meta: {
-      TabbarShow: true,
+      TabbarShow: false,
     },
   },
   {

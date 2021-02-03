@@ -8,6 +8,7 @@
       <detail-goods-info :detailInfo="detailInfo" @imageLoad="resetScroll" />
       <detail-param-info :paramInfo="paramsInfo" />
     </scroll>
+    <base-bottom-bar />
   </div>
 </template>
 
@@ -24,6 +25,7 @@ import DetailBaseInfo from './childComps/DetailBaseInfo.vue';
 import DetailShopInfo from './childComps/DetailShopInfo.vue';
 import DetailGoodsInfo from './childComps/DetailGoodsInfo.vue';
 import DetailParamInfo from './childComps/DetailParamInfo.vue';
+import BaseBottomBar from './childComps/BaseBottomBar.vue';
 
 export default {
   components: {
@@ -34,6 +36,7 @@ export default {
     DetailShopInfo,
     DetailGoodsInfo,
     DetailParamInfo,
+    BaseBottomBar,
   },
   name: 'Detail',
   data() {
